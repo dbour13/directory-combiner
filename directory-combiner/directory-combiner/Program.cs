@@ -29,7 +29,7 @@ namespace directory_combiner
                       });
                   },
                   false,
-                  "Folder to mirror in the virtual drive.  Can specify multiple.  Each should be in the format \"\\physical\\path\\to\\directory|\\virtual\\directory\"")
+                  "Folder to mirror in the virtual drive.  Can specify multiple.  Each should be in the format \"\\physical\\path\\to\\directory|\\virtual\\directory\".  Will mount C:\\ to \\ by default")
             };
 
             cmd.Handler = CommandHandler.Create<string, IEnumerable<FolderMap>>(HandleMount);
@@ -50,7 +50,7 @@ namespace directory_combiner
                         mre.Set();
                     };
 
-                    var mirror = new Mirror(dokanNetLogger, mf);
+                    var mirror = new Mirror(dokanNetLogger, mf ?? new List<FolderMap> { new FolderMap("C:\\", "\\") });
 
                     try
                     {

@@ -97,7 +97,7 @@ namespace DokanNetMirror
                 {
                     // Get rid of the MapTo portion from fileName and add it to MapFrom to find
                     // the path on the physical disc it is located
-                    string path = folderMap.MapFrom.TrimEnd('\\') + fileName.Substring(folderMap.MapTo.Length);
+                    string path = (folderMap.MapFrom + fileName.Substring(folderMap.MapTo.Length)).Replace("\\\\", "\\");
 
                     if (File.Exists(path))
                     {
@@ -110,13 +110,13 @@ namespace DokanNetMirror
             {
                 // Return all folders that are mapped to the folder location at 'fileName'
                 return folderMaps.Where(fm => IsInPath(fileName, fm.MapTo))
-                                    .Select(fm => fm.MapFrom.TrimEnd('\\') + fileName.Substring(fm.MapTo.Length))
+                                    .Select(fm => (fm.MapFrom + fileName.Substring(fm.MapTo.Length)).Replace("\\\\", "\\"))
                                     .Where(d => Directory.Exists(d)).ToArray();
             }
 
             // Otherwise if it doesn't exist yet just use the first folderMap
             return folderMaps.Where(fm => IsInPath(fileName, fm.MapTo))
-                             .Select(fm => fm.MapFrom.TrimEnd('\\') + fileName.Substring(fm.MapTo.Length))
+                             .Select(fm => (fm.MapFrom + fileName.Substring(fm.MapTo.Length)).Replace("\\\\", "\\"))
                              .Take(1)
                              .ToArray();
         }

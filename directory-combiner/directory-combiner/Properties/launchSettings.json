@@ -1,8 +1,7 @@
 {
   "profiles": {
     "directory-combiner": {
-      "commandName": "Project",
-      "commandLineArgs": " -mf J:\\Media\\Anime\\Series\\Watched|\\anime -mf J:\\Media\\Anime\\Series\\Watching|\\anime -mf J:\\Media\\Anime\\Series\\Dropped|\\anime -mf \"J:\\Media\\Anime\\Series\\Haven't Started|\\anime\" -mf H:\\Media\\Anime\\Series\\Watched|\\anime -mf H:\\Media\\Anime\\Series\\Dropped|\\anime -mf \"H:\\Media\\Anime\\Series\\Haven't Started|\\anime\" -md K:\\"
+      "commandName": "Project"
     }
   }
 }

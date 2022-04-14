@@ -24,16 +24,16 @@ Options:
 ```
 
 ## Example
-An example of mirroring two folders "J:\Media\Videos" and "H:\Media\Videos" into a single folder, 'videos', on virtual drive 'K:\':
+An example of mirroring two folders "J:\Media\Videos" and "H:\Media\Videos" into a single folder, "videos", on virtual drive "K:\":
 
 ```
-directory-combiner -md K:\ -mf J:\Media\Videos|\videos -mf H:\Media\Videos|\videos 
+directory-combiner -md K:\ -mf "J:\Media\Videos|\videos" -mf "H:\Media\Videos|\videos"
 ```
 
-An example of mirroring two folders 'J:\Media\Videos" and "H:\Media\Videos" into separate folders, 'j\videos' and 'h\videos' on virtual drive 'K:\':
+An example of mirroring two folders "J:\Media\Videos" and "H:\Media\Videos" into separate folders, "j\videos" and "h\videos" on virtual drive "K:\":
 
 ```
-directory-combiner -md K:\ -mf J:\Media\Videos|\j\videos -mf H:\Media\Videos|\h\videos 
+directory-combiner -md K:\ -mf "J:\Media\Videos|\j\videos" -mf "H:\Media\Videos|\h\videos"
 ```
 
 ## Third Party Licenses
