@@ -29,7 +29,7 @@ namespace directory_combiner
                       });
                   },
                   false,
-                  "Folder to mirror in the virtual drive.")
+                  "Folder to mirror in the virtual drive.  Can specify multiple.  Each should be in the format \"\\physical\\path\\to\\directory|\\virtual\\directory\"")
             };
 
             cmd.Handler = CommandHandler.Create<string, IEnumerable<FolderMap>>(HandleMount);
